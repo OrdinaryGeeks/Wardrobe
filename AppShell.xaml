@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Wardrobe2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Wardrobe2"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Wardrobe2">
+
+    <TabBar>
+
+
+        
+        <Tab Title="MainPage">
+        <ShellContent
+     Title="Home"
+            Route="MainPage"
+     ContentTemplate="{DataTemplate local:MainPage}"
+     />
+    </Tab>
+
+
+        <Tab Title="Outfit">
+            <ShellContent Title="Outfit"
+                          Route="Outfit"
+                    ContentTemplate="{DataTemplate local:OutfitPage}"/>
+        </Tab>
+        <Tab Title="Mirror">
+            <ShellContent Title="Mirror"
+                          Route="Mirror"
+                    ContentTemplate="{DataTemplate local:Mirror}"/>
+        </Tab>
+
+
+    </TabBar>
+
+</Shell>

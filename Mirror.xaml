@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wardrobe2.Mirror"
+                    xmlns:viewmodel="clr-namespace:Wardrobe2.ViewModels"
+            x:DataType="viewmodel:MirrorViewModel"
+             Title="Mirror">
+    <ScrollView>
+        <VerticalStackLayout>
+
+
+        <HorizontalStackLayout>
+            <Image IsVisible="{Binding SuitCoatVisible}" Source="{Binding SuitCoatPath}" HeightRequest="200" WidthRequest="200"></Image>
+            <Image IsVisible="{Binding ButtonDownVisible}" Source="{Binding ButtonDownPath}" HeightRequest="200" WidthRequest="200"></Image>
+           
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <Image IsVisible="{Binding CollaredVisible}" Source="{Binding CollaredPath}" HeightRequest="200" WidthRequest="200"></Image>
+            <Image IsVisible="{Binding TeeShirtsVisible}" Source="{Binding TeeShirtsPath}" HeightRequest="200" WidthRequest="200"></Image>
+            
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <Image IsVisible="{Binding JeansVisible}" Source="{Binding JeansPath}" HeightRequest="200" WidthRequest="200"></Image>
+            <Image IsVisible="{Binding SlacksVisible}" Source="{Binding SlacksPath}" HeightRequest="200" WidthRequest="200"></Image>
+            
+        </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>

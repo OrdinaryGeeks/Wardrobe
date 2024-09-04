@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Wardrobe2.ViewModels"
+             x:DataType="viewmodel:MainViewModel"
+             x:Class="Wardrobe2.MainPage">
+
+    <ScrollView>
+        <Grid ColumnDefinitions="5*, 5*"
+              RowDefinitions="Auto, Auto, Auto, Auto">
+            
+            <Label TextColor="Blue" FontSize="25" Text="Welcome to Wardrobe.io"></Label>
+                <Button Grid.Column="1" Grid.Row="1"  Command="{Binding AddCommand}" Text="Take a picture of a clothing item"></Button>
+
+            <Button  Grid.Row="1" Command="{Binding PickPhotoCommand}" Text="Pick a photo to assign to piece of clothing"></Button>
+
+            <VerticalStackLayout Grid.Row="2" Grid.ColumnSpan="2">
+            <RadioButton Content="Button-down Shirt" CheckedChanged="OnClothesItemChecked" GroupName="clothes"/>
+            <RadioButton Content="Collared Polo Shirt" CheckedChanged="OnClothesItemChecked"  GroupName="clothes"/>
+            <RadioButton Content="Jeans" CheckedChanged="OnClothesItemChecked"  GroupName="clothes"/>
+            <RadioButton Content="Slacks" CheckedChanged="OnClothesItemChecked"  GroupName="clothes"/>
+            <RadioButton Content="Tee Shirts" CheckedChanged="OnClothesItemChecked"  GroupName="clothes"/>
+            <RadioButton Content="Suit Coat" CheckedChanged="OnClothesItemChecked"  GroupName="clothes"/>
+            </VerticalStackLayout>
+            <CollectionView Grid.Row="3" Grid.ColumnSpan="2" ItemsSource="{Binding ImagePaths}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="{x:Type x:String}">
+                        <HorizontalStackLayout>
+                            <Label Text="{Binding .}"></Label>
+                        <Image Source="{Binding .}"  HeightRequest="200" WidthRequest="200"/>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                
+                
+                
+       
+            </CollectionView>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wardrobe2.OutfitPage"
+             xmlns:viewmodel="clr-namespace:Wardrobe2.ViewModels"
+            x:DataType="viewmodel:OutfitViewModel"
+             Title="OutfitPage">
+    <ScrollView>
+        <Grid ColumnDefinitions="5*, 5*"
+          RowDefinitions="Auto, Auto, Auto, Auto">
+
+            <Label TextColor="Blue" FontSize="25" Text="Welcome to Wardrobe.io"></Label>
+
+            <VerticalStackLayout Grid.Row="1" Grid.ColumnSpan="2">
+                <HorizontalStackLayout>
+                    <CheckBox   />
+                    <Label Text="Button-down Shirt"></Label>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <CheckBox   />
+                    <Label Text="Collared Polo Shirt"></Label>
+                </HorizontalStackLayout>
+                
+                <HorizontalStackLayout>
+                            <CheckBox />
+                    <Label Text="Jeans"></Label>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                                <CheckBox   />
+                    <Label Text="Slacks"></Label>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                                    <CheckBox   />
+                    <Label Text="Tee Shirts"></Label>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                                        <CheckBox   />
+                    <Label Text="Suit Coats"></Label>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Row="2" Grid.ColumnSpan="2">
+
+                <HorizontalStackLayout>
+                    <Button Text="Button-down Shirt" Command="{Binding SetButtonDownCommand}"></Button>
+                    <Image IsVisible="{Binding ButtonDownVisible}" HeightRequest="200" WidthRequest="200" Source="{Binding ButtonDownPath}" x:Name="ButtonDownImage"></Image>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Button Text="Collared Polo Shirt" Command="{Binding SetCollaredPoloCommand}" />
+
+                    <Image x:Name="CollaredPoloImage" HeightRequest="200" WidthRequest="200" IsVisible="{Binding CollaredVisible}" Source="{Binding CollaredPath}"></Image>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Button Text="Jeans"  Command="{Binding SetJeansCommand}"/>
+                    <Image x:Name="JeansImage" HeightRequest="200" WidthRequest="200" IsVisible="{Binding JeansVisible}" Source="{Binding JeansPath}"></Image>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Button Text="Slacks" Command="{Binding SetSlacksCommand}" />
+                    <Image x:Name="SlacksImage" HeightRequest="200" WidthRequest="200" IsVisible="{Binding SlacksVisible}" Source="{Binding SlacksPath}"></Image>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Button Text="Tee Shirts" Command="{Binding SetTeeShirtsCommand}"  />
+                    <Image x:Name="TeeShirtsImage" HeightRequest="200" WidthRequest="200" Source="{Binding TeeShirtsPath}" IsVisible="{Binding TeeShirtsVisible}"></Image>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Button Text="Suit Coat" Command="{Binding SetSuitCoatCommand}" />
+                    <Image x:Name="SuitCoatImage" HeightRequest="200" WidthRequest="200" Source="{Binding SuitCoatPath}" IsVisible="{Binding SuitCoatVisible}"></Image>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+
+        </Grid>
+    </ScrollView>
+</ContentPage>
